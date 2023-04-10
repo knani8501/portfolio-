@@ -1,0 +1,293 @@
+/* Style for the Technical Skills section */
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set background and text colors */
+  body {
+    background-color: #f2f2f2;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #111;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  h1 {
+    color: #fff;
+    font-size: 36px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-left: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #f2f2f2;
+  }
+  
+  /* Main styles */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  h2 {
+    background-color: #111;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px;
+  }
+  
+  p {
+    padding: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  .language {
+    font-weight: bold;
+  }
+  
+  /* Sliding cards effect */
+  section:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+    transform: skewY(-12deg);
+    transform-origin: 0;
+  }
+  
+  section:nth-child(odd):before {
+    transform: skewY(12deg);
+    transform-origin: 100%;
+  }
+  
+  /* Glass finish */
+  header:before,
+  main:before,
+  section:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  header:before,
+  main:before {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  section:before {
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -2;
+  }
+  
+#technical-skills {
+    background-color: #f5f5f5;
+    padding: 50px;
+  }
+  
+  .cert-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 550px;
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cert-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .cert-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1abc9c;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+  }
+  
+  .cert-item:hover::before {
+    transform: translateY(0);
+  }
+  
+  .cert-item h4 {
+    font-size: 1.2rem;
+    color: #1abc9c;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cert-item p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cert-item:hover p {
+    opacity: 1;
+  }
+  /* Style for the cards */
+  
+  .card {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card:hover .card-content {
+    transform: translateY(-100%);
+  }
+  
+  .card:hover .card-image {
+    transform: scale(1.2);
+  }
+  
+  .card-image {
+    height: 60%;
+    background-color: #eee;
+    background-image: url('your-image-url-here');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .card-description {
+    font-size: 0.8em;
+    color: #888;
+  }
+  .certificates-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  .certificates-card {
+    width: 600px;
+    margin-right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .certificates-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .certificates-card img {
+    object-fit: cover;
+    width: 570px;
+    height: 520px;
+    height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+  }
+  
+  .certificates-card h3 {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
